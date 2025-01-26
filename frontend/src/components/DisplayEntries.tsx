@@ -4,8 +4,6 @@ import { BACKEND_URL } from "../config";
 import axios from "axios";
 import EntryCard from "./EntryCard";
 import SkeletonList from "../components/SkeletonList"
-import { useNavigate } from "react-router-dom";
-
 
 interface displayEntriesInput {
     path: string
