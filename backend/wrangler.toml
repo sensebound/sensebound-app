@@ -1,0 +1,11 @@
+name = "backend"
+main = "src/index.ts"
+compatibility_date = "2024-10-26"
+compatibility_flags = [ "nodejs_compat" ]
+
+
+[vars]
+DATABASE_URL="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiNjIwNmFlM2QtZGMzYS00MmRkLWEzMzItODIyNDIzYjczMWMyIiwidGVuYW50X2lkIjoiMmY2YzgwYTdiYTgyNTBiOTc2YmVjODk5MzdjYTFmZDJjYzgyYzU4ODM3MzUyZjBhOWMwZjMwNDc0ZGJhYmJkZSIsImludGVybmFsX3NlY3JldCI6IjJlY2YzZDZjLTI4YzMtNDAxYy1hMTYwLWVjZTU4MjIyNjFhYyJ9.ynBvdwI3xTaQ1s-GpPqKepXeOTJhCieDSO2OxdrGJ1Y"
+JWT_SECRET = "patpattison"
+BACKEND_URL = "https://backend.sensebound4.workers.dev"
+x

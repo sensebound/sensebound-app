@@ -1,1 +1,1 @@
-Sensebound App
+Sensebound is a platform designed for object writing enthusiasts. It allows users to engage in creative writing exercises inspired by specific words and explore posts shared by others. The site aims to cultivate creativity and encourage a community of like-minded writers.

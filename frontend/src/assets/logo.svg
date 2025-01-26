@@ -1,0 +1,40 @@
+<svg
+  width="200"
+  height="250"
+  viewBox="0 0 200 250"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Sketchbook Binding -->
+  <rect x="15" y="15" width="170" height="220" rx="10" ry="10" fill="none" stroke="#8B4513" stroke-width="2" />
+
+  <!-- Left Page Lines -->
+  <path d="M20,30 h70" stroke="#b3b3b3" stroke-width="1" />
+  <path d="M20,50 h70" stroke="#b3b3b3" stroke-width="1" />
+  <path d="M20,70 h70" stroke="#b3b3b3" stroke-width="1" />
+  <path d="M20,90 h70" stroke="#b3b3b3" stroke-width="1" />
+  <path d="M20,110 h70" stroke="#b3b3b3" stroke-width="1" />
+  <path d="M20,130 h70" stroke="#b3b3b3" stroke-width="1" />
+
+  <!-- Right Page Lines -->
+  <path d="M110,30 h70" stroke="#b3b3b3" stroke-width="1" />
+  <path d="M110,50 h70" stroke="#b3b3b3" stroke-width="1" />
+  <path d="M110,70 h70" stroke="#b3b3b3" stroke-width="1" />
+  <path d="M110,90 h70" stroke="#b3b3b3" stroke-width="1" />
+  <path d="M110,110 h70" stroke="#b3b3b3" stroke-width="1" />
+  <path d="M110,130 h70" stroke="#b3b3b3" stroke-width="1" />
+
+  <!-- Left Page Text (Simulating Words) -->
+  <text x="20" y="40" font-family="serif" font-size="8" fill="#4b4b4b">Thoughts on creativity...</text>
+  <text x="20" y="60" font-family="serif" font-size="8" fill="#4b4b4b">Sensory input and words</text>
+  <text x="20" y="80" font-family="serif" font-size="8" fill="#4b4b4b">Imagination and flow...</text>
+  <text x="20" y="100" font-family="serif" font-size="8" fill="#4b4b4b">Reflect, write, repeat</text>
+  <text x="20" y="120" font-family="serif" font-size="8" fill="#4b4b4b">Feelings on paper...</text>
+
+  <!-- Right Page Text (Simulating Words) -->
+  <text x="110" y="40" font-family="serif" font-size="8" fill="#4b4b4b">Nature scenes & colors...</text>
+  <text x="110" y="60" font-family="serif" font-size="8" fill="#4b4b4b">An inner dialogue...</text>
+  <text x="110" y="80" font-family="serif" font-size="8" fill="#4b4b4b">Moments captured...</text>
+  <text x="110" y="100" font-family="serif" font-size="8" fill="#4b4b4b">Stream of thoughts...</text>
+  <text x="110" y="120" font-family="serif" font-size="8" fill="#4b4b4b">Sketching ideas...</text>
+</svg>
+
