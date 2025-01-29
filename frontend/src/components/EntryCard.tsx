@@ -17,7 +17,7 @@ export default function EntryCard({username, datePosted, text, wordOfTheDay}: En
     const dateString = date.toDateString().slice(4,15)
 
     return ( 
-        <div className="mt-7 border-[1px] border-gray-600 flex flex-col p-7 rounded-lg shadow-xl">
+        <div className="min-h-[30vh]  mt-7 border-[1px] border-gray-600 flex flex-col p-7 rounded-lg shadow-xl text-justify">
             <div className="mb-[2vh] mt-[1vh] flex justify-between">
                 <button className="w-full" onClick={()=>{
                         navigate('/userProfile',{state:{user: username}})
@@ -50,18 +50,18 @@ export default function EntryCard({username, datePosted, text, wordOfTheDay}: En
             <div className="flex flex-col text-sm font-light">
                 <div className="font-bold mb-2 flex items-center">
                 
-                    <div >
+                    <div className="italic">
                         {wordOfTheDay}
                     </div>
                     
                 </div>
-                <div>
+                <div className="mt-4">
                     {text.slice(0,400) + " ..."}
                 </div>
                 
             </div>
 
-            <div className="flex justify-end mt-[3vh]">
+            <div className="flex justify-end mt-auto">
                 <button className="border-[1px] bg-black text-sm md:text-md  text-black text-slate-50 border-black rounded-2xl px-4 py-1 flex" onClick={
                     () => {
                         navigate("/post", {state: {user: username, date: datePosted, text:text, word: wordOfTheDay}})

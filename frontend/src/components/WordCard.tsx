@@ -15,7 +15,7 @@ export default function WordCard({handler}: WordCardInputs){
 
     return (
         <div  className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60">
-                        <div className="bg-slate-50 p-6 rounded-lg shadow-xl ">
+                        <div className="bg-slate-50 p-6 rounded-lg shadow-xl">
                             <div className="flex flex-col justify-end w-80">
                                         <div className="flex flex-row justify-end w-80">
                                                     <button onClick={handler}>

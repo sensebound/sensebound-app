@@ -32,7 +32,7 @@ export default function DisplayEntries({path}: displayEntriesInput){
 
 
         
-        let finalPosts = response.data.posts;
+        let finalPosts = response.data.posts.reverse();
 
         // if(community){
         //   finalPosts = shuffleArray(finalPosts);
