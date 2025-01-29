@@ -79,15 +79,14 @@ export default function Editor(){
 
 
                                     <div className="flex justify-center pt-[1vh] ">
-                                        
                                             <textarea onChange={(e)=>{
                                                     setText(e.target.value)
-                                            }} placeholder="Your deep dive starts here..."   className=" p-5 w-[90vw] h-[60vh] lg:w-[70vw] lg:h-[60vh] border-none focus:border-none text-roboto rounded-xl text-left align-top"/>
+                                            }} placeholder="Your deep dive starts here..."   className=" bg-slate-50 p-5 w-[90vw] h-[60vh] lg:w-[44vw] lg:h-[65vh] border-none focus:outline-none focus:ring-0 focus:border-slate-50 text-serif rounded-xl text-left align-top"/>
                                        
                                         
                                     </div> 
 
-
+                                    <Footer/>          
                                 </div>
                             : <div className="flex justify-center mt-[1vh] font-light text-center ">
                                 <div>
@@ -137,9 +136,10 @@ export default function Editor(){
                                     <div>
 
                                     </div>
+                                    <Footer/>
                                 </div>
 
-                                <Footer/>
+                                
                                     
 
                             </div>
