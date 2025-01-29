@@ -3,7 +3,7 @@ import z from "zod";
 
 // signup types 
 export const signUpInput = z.object({
-    username: z.string().min(8),
+    username: z.string(),
     email: z.string().email(),
     password_hash: z.string(),
 });
