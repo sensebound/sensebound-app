@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build" # Build command
+  publish = "dist"          # Directory where Vite generates the built files
+
+[[redirects]]
+  from = "/*"               # Redirect all requests
+  to = "/index.html"        # Serve the SPA entry point
+  status = 200
