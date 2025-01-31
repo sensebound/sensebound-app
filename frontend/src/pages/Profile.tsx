@@ -14,7 +14,7 @@ export default function Profile(){
             <div className="w-full h-screen mt-[6vh]  bg-slate-50">
                 <ProfileNavbar />       
                 <PostHeader text="Community Feed" />
-                <DisplayEntries community={true} path="/writings"/>
+                <DisplayEntries userPost={false} path="/writings"/>
                 <Footer/>
             </div>  
             )

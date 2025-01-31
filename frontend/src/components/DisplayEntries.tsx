@@ -1,20 +1,21 @@
 import { useEffect, useState } from "react";
-
 import { BACKEND_URL } from "../config";
 import axios from "axios";
 import EntryCard from "./EntryCard";
 import SkeletonList from "../components/SkeletonList"
 
+
 interface displayEntriesInput {
-    path: string
-    community: boolean
+    path: string,
+    deleteHandler?: ({userId}:{userId:string}) => void;
+    userPost?: boolean
 }
 
-export default function DisplayEntries({path}: displayEntriesInput){
+export default function DisplayEntries({path,deleteHandler,userPost}: displayEntriesInput){
    const [data, setData] = useState([]);
    const [loading, setLoading] = useState(false);
    
-  
+   
 
    useEffect(()=>{
     setLoading(true)
@@ -34,10 +35,6 @@ export default function DisplayEntries({path}: displayEntriesInput){
         
         let finalPosts = response.data.posts.reverse();
 
-        // if(community){
-        //   finalPosts = shuffleArray(finalPosts);
-        // }
-        
         
         setData(finalPosts)
         setLoading(false)
@@ -60,7 +57,9 @@ export default function DisplayEntries({path}: displayEntriesInput){
                               const date = item["date_posted"];
                               const word = item["word"]["word"];
                               const text = item["content"];
-                      
+                              const userId = item["post_id"]
+              
+                                                  
                               return (
                                 <EntryCard
                                   key={key}
@@ -68,6 +67,9 @@ export default function DisplayEntries({path}: displayEntriesInput){
                                   datePosted={date}
                                   wordOfTheDay={word}
                                   text={text}
+                                  deleteHandler={deleteHandler}
+                                  userPost={userPost}
+                                  userId={userId}
                                 />
                               );
                               
