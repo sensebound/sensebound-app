@@ -2,13 +2,34 @@ import PostHeader from "../components/PostHeader";
 import ProfileNavbar from "../components/ProfileNavbar";
 import Footer from "../components/Footer";
 import DisplayStats from "../components/DisplayStats";
+import DeletePopUp from "../components/DeletePopUp";
+import Loader from "../components/Loader";
+import { useState } from "react";
 
 export default function Stats(){
+    const [deleteAccountPopUp, setDeleteAccountPopUp] = useState(false);
+            const [userId, setUserId] = useState("");
+            const [loading, setLoading] = useState(false);
+         
+        
+            interface deleteHandlerInput{
+                id: string
+            }
+        
+            const deleteAccountHandler = ({id}:deleteHandlerInput) => {
+                setUserId(id);
+                setDeleteAccountPopUp(!deleteAccountPopUp)
+            }
+        
 
-    return <div className="w-full h-screen mt-[9vh]  bg-slate-50">
-        <ProfileNavbar />
-        <PostHeader text="Your Stats"/>
-        <DisplayStats/>
-        <Footer/>
-    </div>
+    return <div className="relative w-full overflow-hidden">
+            <div className="w-full h-screen mt-[9vh]  bg-slate-50">
+            <ProfileNavbar stats={true} handler={deleteAccountHandler}/>
+            <PostHeader text="Your Stats"/>
+            <DisplayStats/>
+            <Footer/>
+            {deleteAccountPopUp && <DeletePopUp deletePost={false} loading={setLoading} userId={userId} handler={deleteAccountHandler}/>}
+            {loading && <Loader/>}
+            </div>
+          </div>
 }

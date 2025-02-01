@@ -15,20 +15,17 @@ export default function DisplayStats(){
     const [dateList, setDateList] = useState<Array<trackerObject>>([])
     
 
-    const username = localStorage.getItem("user")
+    const username = localStorage.getItem("user");
 
 
     interface trackerObject {
         [key: string]: {level: number}
     }
 
-    
 
 
     useEffect(()=>{
 
-        
-        
         axios.get(`${BACKEND_URL}/api/v1/writings/user/${username}`, {
             headers: {
                 Authorization: "Bearer " + localStorage.getItem("token")
@@ -76,8 +73,6 @@ export default function DisplayStats(){
                  
             }
 
-            
-
             setDateList(dateArray)
                                                                                                                                                                                            
             
@@ -91,7 +86,7 @@ export default function DisplayStats(){
 
     useEffect(()=>{
             const updateCellSize = () => {
-                setCellSize(7)
+                setCellSize(6)
                 if (window.matchMedia("(min-width:640px)").matches){
                     setCellSize(8)
                 }
@@ -112,10 +107,10 @@ export default function DisplayStats(){
    
 
     return (
-        <div className="px-[7vw] md:px-[25vw] lg:px-[30vw] mt-7  bg-slate-50">
+        <div className="px-[2vw] md:px-[25vw] lg:px-[30vw] mt-7  bg-slate-50">
             
             <div className="flex justify-center ml-14">
-                <ContributionCalendar 
+                <ContributionCalendar
                 data={dateList}
                 theme={'grass'} 
                 scroll={false} 

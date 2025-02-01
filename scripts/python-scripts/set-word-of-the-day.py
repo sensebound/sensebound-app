@@ -3,11 +3,7 @@ from selenium.webdriver.common.by import By
 import requests
 
 
-
-
-
 def getWordOfTheDay():
-
     options = webdriver.ChromeOptions()
     options.add_argument("--headless=new")
 
@@ -25,6 +21,8 @@ def getWordOfTheDay():
 
     return wordOfTheDay
 
+
+
 def setWordOfTheDay(word):
     url = 'https://backend.sensebound4.workers.dev/api/v1/words/post'
     json = {"word": str(word)}
@@ -35,7 +33,6 @@ def setWordOfTheDay(word):
 
 
 if __name__ == "__main__":
-
     word = getWordOfTheDay()
     response = setWordOfTheDay(word)
     print(response)

@@ -12,8 +12,7 @@ export default function Profile(){
 
         const [deleteAccountPopUp, setDeleteAccountPopUp] = useState(false);
         const [userId, setUserId] = useState("");
-        const [loading, setLoading] = useState(false)
-    
+        const [loading, setLoading] = useState(false);
      
     
         interface deleteHandlerInput{
@@ -34,7 +33,7 @@ export default function Profile(){
                 <DisplayEntries  path="/writings"/>
                 <Footer/>
             </div>  
-            )
+        )
         
              {deleteAccountPopUp && <DeletePopUp deletePost={false} loading={setLoading} userId={userId} handler={deleteAccountHandler}/>}
              {loading && <Loader/>}

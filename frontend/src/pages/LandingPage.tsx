@@ -24,12 +24,6 @@ export default function LandingPage(){
 
     const navigate = useNavigate();
 
-    useEffect(()=>{
-        localStorage.clear()
-    },[])
-
-    
-    
 
     useEffect( ()=>{
         axios.get(`${BACKEND_URL}/api/v1/words/todayWord`)
@@ -43,13 +37,14 @@ export default function LandingPage(){
 
 
         useEffect(()=>{
-            if(loggedIn){
+            if(localStorage.getItem('loggedIn')){
                 navigate('/profile')
+            }else{
+                localStorage.clear();
             }
         }
         ,[navigate])    
 
-const loggedIn = localStorage.getItem("loggedIn");
     
 
     function handleSignUpPopUp(){

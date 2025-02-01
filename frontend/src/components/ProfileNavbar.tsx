@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import Logo from "./Logo";
 import { Link, useNavigate } from "react-router-dom";
-import DeletePopUp from "./DeletePopUp";
 import { UserIcon } from "./UserIcon";
 import HandleOutsideClick from "./HandleOutsideClick";
 
 
 interface deleteAccountHandler {
     handler: ({id}:{id:string}) => void   
+    stats?: boolean
 }
 
-export default function ProfileNavbar({handler}:deleteAccountHandler){
+export default function ProfileNavbar({handler, stats=false}:deleteAccountHandler){
 
     const [user,setUser] = useState<string>("");
     const [dropdown, setDropdown] = useState<boolean>(false);
@@ -48,7 +48,7 @@ export default function ProfileNavbar({handler}:deleteAccountHandler){
 
             <div className="flex flex-col justify-center mr-[10vw] ">
                         <div className="flex-row justify-between md:flex">
-                            <div className="hidden md:flex md:mr-[5vw] md:flex-col md:justify-center md:border-[1px] md:px-5 md:rounded-lg md:border-black shadow-md bg-slate-50">
+                             <div className="hidden md:flex md:mr-[5vw] md:flex-col md:justify-center md:border-[1px] md:px-5 md:rounded-lg md:border-black shadow-md bg-slate-50">
                                 <Link to={"/editor"}>
 
                                     <div >
@@ -70,7 +70,7 @@ export default function ProfileNavbar({handler}:deleteAccountHandler){
 
                             <button onClick={()=>{
                                 setDropdown(!dropdown)
-                            } }  className="text-white z-20 bg-black border rounded-lg hover:bg-gray-800  text-sm px-2.5 py-2.5 text-center" type="button">
+                            } }  className="text-white z-1000 bg-black border rounded-lg hover:bg-gray-800  text-sm px-2.5 py-2.5 text-center" type="button">
                                 <UserIcon/>
                             </button>
 
@@ -82,7 +82,7 @@ export default function ProfileNavbar({handler}:deleteAccountHandler){
                                 <ul className="pt-2 text-sm text-gray-700 " aria-labelledby="dropdownDelayButton">
 
 
-                                <li className="md:hidden">
+                                {!stats && <li className="md:hidden">
                                 <Link to={'/editor'}>
                                     <div className="block px-4 py-2 hover:bg-gray-300 ">
                                        
@@ -100,8 +100,8 @@ export default function ProfileNavbar({handler}:deleteAccountHandler){
                                     </div>
                                 </Link>
 
-                                </li>
-                                <li>
+                                </li>}
+                                {!stats && <li>
                                     <div className="block px-4 py-2 hover:bg-gray-300  ">
                                         <Link to={'/profile'}>
                                             <div className="flex flex-row justify-between">
@@ -118,8 +118,8 @@ export default function ProfileNavbar({handler}:deleteAccountHandler){
                                         </Link>
                                     </div>
 
-                                </li>
-                                <li>
+                                </li>}
+                                {!stats && <li>
                                     <div className="block px-4 py-2 hover:bg-gray-300  ">
                                         <Link to={'/stats'}>
                                             <div className="flex flex-row justify-between">
@@ -136,7 +136,7 @@ export default function ProfileNavbar({handler}:deleteAccountHandler){
                                         </Link>
                                     </div>
 
-                                </li>
+                                </li>}
                                 <li>
                                     <div className="block px-4 py-2 hover:bg-gray-300  ">
                                        <button className="w-full" onClick={ ()=>{
@@ -167,7 +167,7 @@ export default function ProfileNavbar({handler}:deleteAccountHandler){
 
                                 
                             
-                                <li>
+                                {!stats && <li>
                                     <div className="block px-4 py-2 hover:bg-gray-300  ">
                                        
                                         <button className="w-full" onClick={()=>{
@@ -194,9 +194,9 @@ export default function ProfileNavbar({handler}:deleteAccountHandler){
                                        
                                     </div>
 
-                                </li>
+                                </li>}
 
-                                <li className="border-t-[1px]">
+                                {!stats && <li className="border-t-[1px]">
                                     <div className="block px-4 py-2 hover:bg-gray-300">
                                         <button className="w-full"onClick={() => {
                                                                         if (handleDropdown) handleDropdown();
@@ -210,11 +210,9 @@ export default function ProfileNavbar({handler}:deleteAccountHandler){
 
                                             </div>
                                         </button>
-    
-                                       
                                     </div>
 
-                                </li>
+                                </li>}
 
                                 
                                 </ul>
