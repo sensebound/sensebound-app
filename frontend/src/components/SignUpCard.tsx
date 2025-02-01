@@ -121,6 +121,9 @@ export default function SignUpCard({close, swap,setLoading}: signUpCardInputs){
                                             setUsernameInput(e.target.value)
                                         }} placeholder="eg. gatormcfly" type="text" id="signup-username" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5 "/>
                                         
+                                        <div className="text-xs font-light text-gray-600 mt-3 flex justify-start text-center">
+                                         Atleast 8 characters.
+                                        </div>
                                     </div>
                                     <div className="mb-6">
                                         <label  className="block mb-2 text-sm font-medium text-gray-900 ">Email</label>
@@ -128,14 +131,18 @@ export default function SignUpCard({close, swap,setLoading}: signUpCardInputs){
                                             setEmailInput(e.target.value)
                                         }
                                         } placeholder="eg. gatormcfly@gmail.com" type="text" id="signup-email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5 "/>
-                                        
+                                         <div className="text-xs font-light text-gray-600 mt-3 flex justify-start text-center">
+                                            Enter valid email.
+                                        </div>
                                     </div>
                                     <div className="mb-6">
                                         <label  className="block mb-2 text-sm font-medium text-gray-900 ">Password</label>
                                         <input onChange={(e)=> {
                                             setPasswordInput(e.target.value)
                                         }}placeholder="*********" type="password" id="sign-up-password" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5 "/>
-                                        
+                                         <div className="text-xs font-light text-gray-600 mt-3 flex justify-center text-center">
+                                            
+                                        </div>
                                     </div>
                                         <div className="mb-6">
                                             <label  className="block mb-2 text-sm font-medium text-gray-900 ">Confirm Password</label>

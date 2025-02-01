@@ -1,27 +1,32 @@
 import { useEffect, useState } from "react";
 import Logo from "./Logo";
 import { Link, useNavigate } from "react-router-dom";
-
-
-
-
+import DeletePopUp from "./DeletePopUp";
 import { UserIcon } from "./UserIcon";
 import HandleOutsideClick from "./HandleOutsideClick";
 
 
+interface deleteAccountHandler {
+    handler: ({id}:{id:string}) => void   
+}
 
-export default function ProfileNavbar(){
+export default function ProfileNavbar({handler}:deleteAccountHandler){
 
     const [user,setUser] = useState<string>("");
-
     const [dropdown, setDropdown] = useState<boolean>(false);
 
     const navigate = useNavigate();
 
 
     const ref = HandleOutsideClick(()=>{
-        setDropdown(false)
+        setDropdown(!dropdown)
     })
+
+    const handleDropdown = () => {
+        setDropdown(false)
+    }
+
+
     
     
 
@@ -34,7 +39,7 @@ export default function ProfileNavbar(){
   
 
     return (
-        <div  className="h-[9vh] fixed top-0 left-0 bg-slate-50 w-full flex border-b-[1px] justify-between z-50">
+        <div  className="h-[9vh] fixed top-0 left-0 bg-slate-50 w-full flex border-b-[1px] justify-between z-1000">
             <div className="ml-[5vw] flex flex-col justify-center ">
                 <Logo link={"/profile"}/>
             </div>
@@ -74,7 +79,7 @@ export default function ProfileNavbar(){
                                 {user}
                                 </div>
                                 
-                                <ul className="py-2 text-sm text-gray-700 " aria-labelledby="dropdownDelayButton">
+                                <ul className="pt-2 text-sm text-gray-700 " aria-labelledby="dropdownDelayButton">
 
 
                                 <li className="md:hidden">
@@ -191,6 +196,26 @@ export default function ProfileNavbar(){
 
                                 </li>
 
+                                <li className="border-t-[1px]">
+                                    <div className="block px-4 py-2 hover:bg-gray-300">
+                                        <button className="w-full"onClick={() => {
+                                                                        if (handleDropdown) handleDropdown();
+                                                                        if (handler) handler({ id: String(localStorage.getItem("userId")) });
+                                                                            }}>
+                                            <div className=" flex-row justify-between items-center text-sm text-red-900 font-semibold">
+                                                <span>
+                                                Delete Account
+                                                </span>
+                                    
+
+                                            </div>
+                                        </button>
+    
+                                       
+                                    </div>
+
+                                </li>
+
                                 
                                 </ul>
                             </div> }
@@ -210,7 +235,7 @@ export default function ProfileNavbar(){
             
 
 
-           
+           {}
         </div>
     )
 }

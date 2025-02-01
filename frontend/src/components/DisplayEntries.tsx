@@ -7,7 +7,7 @@ import SkeletonList from "../components/SkeletonList"
 
 interface displayEntriesInput {
     path: string,
-    deleteHandler?: ({userId}:{userId:string}) => void;
+    deleteHandler?: ({id}:{id:string}) => void;
     userPost?: boolean
 }
 
@@ -69,7 +69,7 @@ export default function DisplayEntries({path,deleteHandler,userPost}: displayEnt
                                   text={text}
                                   deleteHandler={deleteHandler}
                                   userPost={userPost}
-                                  userId={userId}
+                                  postId={userId}
                                 />
                               );
                               

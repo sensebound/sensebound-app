@@ -2,7 +2,7 @@ import "./loader.css";
 
 export default function Loader() {
     return (
-        <div className="fixed w-full h-screen flex justify-center items-center bg-slate-100">
+        <div className="fixed w-full h-screen flex justify-center items-center bg-slate-100 z-5000">
             
             <div>
                     <div role="status" className="flex justify-center items-center">

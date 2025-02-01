@@ -11,35 +11,42 @@ import Loader from "../components/Loader";
 export default function UserPage(){
 
     const location = useLocation();
-    const [deletePopUp, setDeletePopUp] = useState(false);
+    const [deletePostPopUp, setDeletePostPopUp] = useState(false);
+    const [deleteAccountPopUp, setDeleteAccountPopUp] = useState(false);
+    const [postId, setPostId] = useState("");
     const [userId, setUserId] = useState("");
     const [loading, setLoading] = useState(false)
 
  
-    const message = 'Are you sure you want to delete this entry ?'
 
     interface deleteHandlerInput{
-        userId: string
+        id: string
     }
 
-    const deleteHandler = ({userId}: deleteHandlerInput ) => {
-        setUserId(userId)
-        setDeletePopUp(!deletePopUp)
+    const deletePostHandler = ({id}: deleteHandlerInput ) => {
+        setPostId(id)
+        setDeletePostPopUp(!deletePostPopUp)
+    }
+
+    const deleteAccountHandler = ({id}:deleteHandlerInput) => {
+        setUserId(id);
+        setDeleteAccountPopUp(!deleteAccountPopUp)
     }
 
     
     return <>
         (
             <div className="w-full h-screen mt-[6vh] bg-slate-50 z-500">  
-                <ProfileNavbar/>
+                <ProfileNavbar handler={deleteAccountHandler}/>
                 <PostHeader text={location.state.user} user={true}/>
-                <DisplayEntries deleteHandler={deleteHandler} userPost={true}  path={`/writings/user/${location.state.user}`}/>
+                <DisplayEntries deleteHandler={deletePostHandler} userPost={true}  path={`/writings/user/${location.state.user}`}/>
                 <Footer/>
             </div>
 
         )
         
-        {deletePopUp && <DeletePopUp loading={setLoading} userId={userId} message={message} handler={deleteHandler}/>}
+        {deletePostPopUp && <DeletePopUp deletePost={true} loading={setLoading} postId={postId} handler={deletePostHandler}/>}
+        {deleteAccountPopUp && <DeletePopUp deletePost={false} loading={setLoading} userId={userId} handler={deleteAccountHandler}/>}
         {loading && <Loader/>}
         </>
           

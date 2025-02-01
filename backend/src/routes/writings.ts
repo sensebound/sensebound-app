@@ -124,9 +124,11 @@ writings.get("/user/:username", async (c) => {
         },
         select:{
             content: true,
+            post_id: true,
             user: {
                 select:{
-                    username: true
+                    username: true,
+
                 }
             },
             date_posted: true,
@@ -230,6 +232,50 @@ writings.post("/post", async (c)=>{
     
     
   
+})
+
+writings.delete("/deletePost/:postId", async (c)=>{
+
+    const postId  = c.req.param("postId");
+
+    const prisma = new PrismaClient({
+        datasourceUrl: c.env.DATABASE_URL
+      }).$extends(withAccelerate()); 
+
+      const response = await prisma.writings.delete({
+        where:{
+            post_id: Number(postId)
+        }
+      })
+
+    if (response){
+        return c.json({
+            postId:postId
+        })
+    }
+});
+
+writings.delete("/deleteAccount/:userId", async (c)=>{
+
+    const userId : string = c.req.param("userId");
+
+    const prisma = new PrismaClient({
+        datasourceUrl: c.env.DATABASE_URL
+      }).$extends(withAccelerate()); 
+
+      const response = await prisma.user.delete({
+        where:{
+            id: userId
+        }
+      })
+
+    if (response){
+        return c.json({
+            postId: userId
+        })
+    }
+
+
 })
 
 writings.delete("/deleteAll", async (c)=> {
