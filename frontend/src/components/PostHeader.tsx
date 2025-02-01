@@ -14,7 +14,7 @@ export default function PostHeader({text,user}: headerInput){
          <div className="flex justify-start items-center">
             {user && <UserIcon/>}
 
-            <span className="ml-1">
+            <span className="ml-3">
                 {text}
             </span>
             
