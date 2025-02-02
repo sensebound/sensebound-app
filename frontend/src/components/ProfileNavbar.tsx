@@ -103,7 +103,7 @@ export default function ProfileNavbar({handler, stats=false}:deleteAccountHandle
                                 </li>}
                                 {!stats && <li>
                                     <div className="block px-4 py-2 hover:bg-gray-300  ">
-                                        <Link to={'/profile'}>
+                                        <Link to={'/profile'} onClick={handleDropdown}>
                                             <div className="flex flex-row justify-between">
                                                 <div>
                                                 Community Feed
@@ -122,7 +122,7 @@ export default function ProfileNavbar({handler, stats=false}:deleteAccountHandle
                                 {!stats && <li>
                                     <div className="block px-4 py-2 hover:bg-gray-300  ">
                                         <Link to={'/stats'}>
-                                            <div className="flex flex-row justify-between">
+                                            <div className="flex flex-row justify-between" >
                                                 <div>
                                                 Stats
                                                 </div>
@@ -140,8 +140,9 @@ export default function ProfileNavbar({handler, stats=false}:deleteAccountHandle
                                 <li>
                                     <div className="block px-4 py-2 hover:bg-gray-300  ">
                                        <button className="w-full" onClick={ ()=>{
+                                            handleDropdown();
                                             navigate('/userProfile', {state:{user:user}})
-                                       }
+                                       }    
                                        }>
                                         <div className="flex flex-row justify-between">
                                             <div>
