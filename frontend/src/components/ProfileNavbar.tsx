@@ -28,8 +28,6 @@ export default function ProfileNavbar({handler, stats=false}:deleteAccountHandle
 
 
     
-    
-
     useEffect(()=>{
         const user : any = localStorage.getItem("user");
         setUser(user)

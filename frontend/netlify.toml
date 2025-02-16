@@ -6,3 +6,6 @@
   from = "/*"               # Redirect all requests
   to = "/index.html"        # Serve the SPA entry point
   status = 200
+
+  [build.environment]
+  GITHUB_TOKEN = ""

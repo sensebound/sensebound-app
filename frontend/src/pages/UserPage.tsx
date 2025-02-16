@@ -23,14 +23,14 @@ export default function UserPage(){
         id: string
     }
 
-    const deletePostHandler = ({id}: deleteHandlerInput ) => {
-        setPostId(id)
-        setDeletePostPopUp(!deletePostPopUp)
-    }
-
     const deleteAccountHandler = ({id}:deleteHandlerInput) => {
         setUserId(id);
         setDeleteAccountPopUp(!deleteAccountPopUp)
+    }
+
+    const deletePostHandler = ({id}: deleteHandlerInput ) => {
+        setPostId(id)
+        setDeletePostPopUp(!deletePostPopUp)
     }
 
     

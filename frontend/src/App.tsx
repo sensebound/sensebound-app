@@ -17,6 +17,10 @@ import UserPage from './pages/UserPage'
 import { Post } from './pages/Post'
 import Reset from './pages/Reset'
 import ForgotPassword from './pages/ForgotPassword'
+import ReactGA from 'react-ga4';
+
+
+ReactGA.initialize("")
 
 
 function App() {

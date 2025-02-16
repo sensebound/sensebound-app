@@ -16,6 +16,7 @@
     "react-contribution-calendar": "^1.5.2",
     "react-countdown": "^2.3.6",
     "react-dom": "^18.3.1",
+    "react-ga4": "^2.1.0",
     "react-router-dom": "^6.27.0",
     "react-toastify": "^11.0.2",
     "save": "^2.9.0"

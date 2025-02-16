@@ -255,28 +255,7 @@ writings.delete("/deletePost/:postId", async (c)=>{
     }
 });
 
-writings.delete("/deleteAccount/:userId", async (c)=>{
 
-    const userId : string = c.req.param("userId");
-
-    const prisma = new PrismaClient({
-        datasourceUrl: c.env.DATABASE_URL
-      }).$extends(withAccelerate()); 
-
-      const response = await prisma.user.delete({
-        where:{
-            id: userId
-        }
-      })
-
-    if (response){
-        return c.json({
-            postId: userId
-        })
-    }
-
-
-})
 
 writings.delete("/deleteAll", async (c)=> {
         

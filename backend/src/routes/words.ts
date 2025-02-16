@@ -35,9 +35,9 @@ words.post("/post", async (c)=>{
     }).$extends(withAccelerate());
 
     const gte = new Date();
-    gte.setHours(0,0,0,0);
+    gte.setUTCHours(0,0,0,0);
 
-    const lt = new Date();
+    const lt= new Date();
     lt.setDate(gte.getDate() + 1)
 
     const checkWord = await prisma.word.findFirst({
@@ -55,7 +55,8 @@ words.post("/post", async (c)=>{
 
     if(!checkWord){
 
-    const date  = new Date(Date.now()).toISOString();
+    const date  = new Date();
+    date.setUTCHours(0,0,0,0);
 
 
     const postedWord = await prisma.word.create({
@@ -77,10 +78,6 @@ words.post("/post", async (c)=>{
         })
     }
 
-    
-
-
- 
   
 
 })
@@ -99,10 +96,10 @@ words.get("/", async (c) => {
         words: allWords
     })
 
-
-
-
 })
+
+
+
 
 
 words.get("/todayWord", async (c) => {
@@ -110,6 +107,8 @@ words.get("/todayWord", async (c) => {
     const prisma = new PrismaClient({
         datasourceUrl: c.env.DATABASE_URL
     }).$extends(withAccelerate());
+
+
 
     const gte = new Date();
     gte.setHours(0,0,0,0);
@@ -133,6 +132,41 @@ words.get("/todayWord", async (c) => {
 
 
 })
+
+
+// words.get('/todayWord', async (c)=>{
+
+//         const prisma = new PrismaClient({
+//         datasourceUrl: c.env.DATABASE_URL
+//     }).$extends(withAccelerate());
+
+//     const timezoneOffset = new Date().getTimezoneOffset();
+
+//     const gte = new Date();
+//     gte.setHours(0,0,0,0);
+
+//     const gteUTC = new Date(gte.getTime() + timezoneOffset * 60 * 1000);
+
+//     const lt = new Date(gte);
+//     lt.setDate(gte.getDate() + 1);
+//     const ltUTC = new Date(lt.getTime() + timezoneOffset * 60 * 100);
+
+
+//     const word = prisma.word.findFirst({
+//         where: {
+//             date_posted: {
+//                 gte: gteUTC,
+//                 lt:  ltUTC,
+//             }
+//         }
+//     });
+
+
+//     return c.json({
+//         todaysWord: word
+//     })
+    
+// });
 
 
 
