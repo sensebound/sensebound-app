@@ -72,7 +72,7 @@ export default function ProfileNavbar({handler, stats=false}:deleteAccountHandle
                                 <UserIcon/>
                             </button>
 
-                            { dropdown && <div ref={ref}  className="z-10  fixed bg-white divide-y divide-gray-100 text-black rounded-lg right-10 md:right-7 lg:top-15 shadow w-44 ">
+                            { dropdown && <div ref={ref}  className="z-200  fixed bg-white divide-y divide-gray-100 text-black rounded-lg right-10 md:right-7 lg:top-15 shadow w-44 ">
                                 <div className="p-2 flex justify-center bg-slate-100 text-sm font-semibold border-b">
                                 {user}
                                 </div>
