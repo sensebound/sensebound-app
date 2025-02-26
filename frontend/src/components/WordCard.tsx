@@ -31,7 +31,7 @@ export default function WordCard({handler}: WordCardInputs){
                                                     {word}
                                                 </p>
                                                 
-                                                <p className="text-xs pt-[5vh] italic">source: <span className="font-normal">objectwriting.com</span></p>         
+                                                <p className="text-xs pt-[5vh] italic">Source: <span className="font-normal">objectwriting.com</span></p>         
                                     </div>
                             </div>
                         </div>
