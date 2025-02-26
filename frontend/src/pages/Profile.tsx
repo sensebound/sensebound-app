@@ -2,9 +2,10 @@ import PostHeader from "../components/PostHeader";
 import DisplayEntries from "../components/DisplayEntries";
 import ProfileNavbar from "../components/ProfileNavbar";
 import Footer from "../components/Footer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import DeletePopUp from "../components/DeletePopUp";
 import Loader from "../components/Loader";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -13,8 +14,13 @@ export default function Profile(){
         const [deleteAccountPopUp, setDeleteAccountPopUp] = useState(false);
         const [userId, setUserId] = useState("");
         const [loading, setLoading] = useState(false);
-     
-    
+
+        const navigate = useNavigate();
+
+        useEffect(()=>{
+            if(!localStorage.getItem("loggedIn")){ navigate("/")};
+        },[]);
+
         interface deleteHandlerInput{
             id: string
         }

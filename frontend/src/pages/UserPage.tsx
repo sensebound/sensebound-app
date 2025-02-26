@@ -2,13 +2,15 @@ import PostHeader from "../components/PostHeader";
 import DisplayEntries from "../components/DisplayEntries";
 import ProfileNavbar from "../components/ProfileNavbar";
 import Footer from "../components/Footer";
-import { useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import DeletePopUp from "../components/DeletePopUp";
 import Loader from "../components/Loader";
 
 
 export default function UserPage(){
+
+    const navigate = useNavigate();
 
     const location = useLocation();
     const [deletePostPopUp, setDeletePostPopUp] = useState(false);
@@ -17,7 +19,9 @@ export default function UserPage(){
     const [userId, setUserId] = useState("");
     const [loading, setLoading] = useState(false)
 
- 
+    useEffect(()=>{
+        if(!localStorage.getItem("loggedIn")){ navigate("/")};
+    },[]);
 
     interface deleteHandlerInput{
         id: string

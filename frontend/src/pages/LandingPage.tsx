@@ -26,6 +26,9 @@ export default function LandingPage(){
 
 
     useEffect( ()=>{
+        setLoading(true)
+        setTimeout(()=>{setLoading(false)},1500)
+
         axios.get(`${BACKEND_URL}/api/v1/words/todayWord`)
         .then(response => {
             const word = response.data

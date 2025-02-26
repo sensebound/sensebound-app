@@ -4,14 +4,21 @@ import Footer from "../components/Footer";
 import DisplayStats from "../components/DisplayStats";
 import DeletePopUp from "../components/DeletePopUp";
 import Loader from "../components/Loader";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Stats(){
     const [deleteAccountPopUp, setDeleteAccountPopUp] = useState(false);
             const [userId, setUserId] = useState("");
             const [loading, setLoading] = useState(false);
-         
-        
+            
+            const navigate = useNavigate();
+            
+            useEffect(()=>{
+                if(!localStorage.getItem("loggedIn")){ navigate("/")};
+            },[]);
+
+
             interface deleteHandlerInput{
                 id: string
             }

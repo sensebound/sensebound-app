@@ -1,11 +1,16 @@
 import { useLocation, useNavigate} from "react-router-dom";
 import FullEntryCard from "../components/FullEntryCard";
+import { useEffect } from "react";
 
 
 
 export function Post(){
     const location = useLocation();
     const navigate = useNavigate();
+
+    useEffect(()=>{
+        if(!localStorage.getItem("loggedIn")){ navigate("/")};
+    },[]);
     
 
     return (

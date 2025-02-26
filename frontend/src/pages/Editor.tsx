@@ -21,6 +21,11 @@ export default function Editor(){
 
     // 10-min timeout
     useEffect(()=>{
+
+        if(!localStorage.getItem("loggedIn")){
+            navigate("/")
+        };
+
         setTimeout(()=>{
             setComplete(true)
         }, 6000)
