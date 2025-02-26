@@ -16,7 +16,7 @@ export function Post(){
             </div>
 
 
-            <div className="mx-[5vw] md:px-[25vw] lg:px-[30vw] mt-5 bg-slate-50">
+            <div className="mx-[5vw] md:px-[25vw] lg:px-[30vw] mt-2 bg-slate-50">
 
                 <FullEntryCard username={location.state.user} datePosted={location.state.date} text={location.state.text} wordOfTheDay={location.state.word}/>
 
