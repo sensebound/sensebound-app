@@ -72,8 +72,8 @@ export default function ProfileNavbar({handler, stats=false}:deleteAccountHandle
                                 <UserIcon/>
                             </button>
 
-                            { dropdown && <div ref={ref}  className="z-200  fixed bg-white divide-y divide-gray-100 text-black rounded-lg right-10 md:right-7 lg:top-15 shadow w-44 ">
-                                <div className="p-2 flex justify-center bg-slate-100 text-sm font-semibold border-b">
+                            { dropdown && <div ref={ref}  className="z-2000  fixed bg-white divide-y divide-gray-100 text-black rounded-lg right-10 md:right-7 lg:top-15 shadow w-44 ">
+                                <div className="p-2 flex justify-center bg-slate-100 text-sm font-semibold border-b z-2000">
                                 {user}
                                 </div>
                                 
@@ -82,7 +82,7 @@ export default function ProfileNavbar({handler, stats=false}:deleteAccountHandle
 
                                 {!stats && <li className="md:hidden">
                                 <Link to={'/editor'}>
-                                    <div className="block px-4 py-2 hover:bg-gray-300 ">
+                                    <div className="block px-4 py-2 hover:bg-gray-300 z-2000">
                                        
                                             <div className="flex flex-row justify-between">
                                             <div>
@@ -100,7 +100,7 @@ export default function ProfileNavbar({handler, stats=false}:deleteAccountHandle
 
                                 </li>}
                                 {!stats && <li>
-                                    <div className="block px-4 py-2 hover:bg-gray-300  ">
+                                    <div className="block px-4 py-2 hover:bg-gray-300  z-2000">
                                         <Link to={'/profile'} onClick={handleDropdown}>
                                             <div className="flex flex-row justify-between">
                                                 <div>
@@ -118,7 +118,7 @@ export default function ProfileNavbar({handler, stats=false}:deleteAccountHandle
 
                                 </li>}
                                 {!stats && <li>
-                                    <div className="block px-4 py-2 hover:bg-gray-300  ">
+                                    <div className="block px-4 py-2 hover:bg-gray-300  z-2000">
                                         <Link to={'/stats'}>
                                             <div className="flex flex-row justify-between" >
                                                 <div>
@@ -136,7 +136,7 @@ export default function ProfileNavbar({handler, stats=false}:deleteAccountHandle
 
                                 </li>}
                                 <li>
-                                    <div className="block px-4 py-2 hover:bg-gray-300  ">
+                                    <div className="block px-4 py-2 hover:bg-gray-300  z-2000">
                                        <button className="w-full" onClick={ ()=>{
                                             handleDropdown();
                                             navigate('/userProfile', {state:{user:user}})
@@ -167,7 +167,7 @@ export default function ProfileNavbar({handler, stats=false}:deleteAccountHandle
                                 
                             
                                 {!stats && <li>
-                                    <div className="block px-4 py-2 hover:bg-gray-300  ">
+                                    <div className="block px-4 py-2 hover:bg-gray-300 z-2000 ">
                                        
                                         <button className="w-full" onClick={()=>{
                                             localStorage.clear()
@@ -196,7 +196,7 @@ export default function ProfileNavbar({handler, stats=false}:deleteAccountHandle
                                 </li>}
 
                                 {!stats && <li className="border-t-[1px]">
-                                    <div className="block px-4 py-2 hover:bg-gray-300">
+                                    <div className="block px-4 py-2 hover:bg-gray-300 z-2000">
                                         <button className="w-full"onClick={() => {
                                                                         if (handleDropdown) handleDropdown();
                                                                         if (handler) handler({ id: String(localStorage.getItem("userId")) });
