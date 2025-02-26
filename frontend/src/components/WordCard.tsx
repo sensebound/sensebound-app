@@ -16,7 +16,7 @@ export default function WordCard({handler}: WordCardInputs){
     return (
         <div  className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60">
                         <div className="bg-slate-50 p-6 rounded-lg shadow-xl">
-                            <div className="flex flex-col justify-end w-80">
+                            <div className="flex flex-col justify-end w-40 sm:w-65 md:w-80">
                                         <div className="flex flex-row justify-end w-40 sm:w-65 md:w-80">
                                                     <button onClick={handler}>
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
