@@ -15,7 +15,7 @@ export default function FullEntryCard({username, datePosted, text, wordOfTheDay}
     const dateString = date.toDateString().slice(4,15)
 
     return (
-        <div className=" min-h-[40vh] mt-7 mb-7 border-[1px] border-gray-600 flex flex-col p-9 rounded-lg shadow-xl text-justify">
+        <div className="min-h-[40vh] mx-4 border-[1px] border-gray-600 flex flex-col p-9 rounded-lg shadow-xl text-justify">
         <div className="mb-[2vh] mt-[2vh] flex justify-between ">
             <button className="w-full" onClick={()=>{
                     navigate('/userProfile',{state:{user: username}})
