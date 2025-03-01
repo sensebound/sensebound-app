@@ -28,7 +28,7 @@ export default function Editor(){
 
         setTimeout(()=>{
             setComplete(true)
-        }, 6000)
+        }, 1000 * 60 * 10)
     
 
     },[]);
